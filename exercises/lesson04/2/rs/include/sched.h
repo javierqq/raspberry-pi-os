@@ -37,9 +37,9 @@ struct cpu_context {
 struct task_struct {
   struct cpu_context cpu_context;
   long state;
-  long counter;
-  long priority;
-  long preempt_count;
+  long counter; //how long is been running, on 0 switch task, based on counter, determines time to execution
+  long priority; //initially set to counter, change to custom
+  long preempt_count; // !=0, critical function being executed
 };
 
 extern void sched_init(void);

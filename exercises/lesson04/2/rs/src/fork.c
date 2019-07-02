@@ -9,9 +9,9 @@ int copy_process(unsigned long fn, unsigned long arg, long pri) {
   p = (struct task_struct *)get_free_page();
   if (!p)
     return 1;
-  p->priority = pri;
+  p->priority = pri; //set priority here, highest priority serve first
   p->state = TASK_RUNNING;
-  p->counter = p->priority;
+  p->counter = p->priority; //set to: counter-priority
   p->preempt_count = 1; // disable preemtion untill schedule_tail
 
   p->cpu_context.x19 = fn;
