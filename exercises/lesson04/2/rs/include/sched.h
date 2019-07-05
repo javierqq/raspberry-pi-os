@@ -38,7 +38,7 @@ struct task_struct {
   struct cpu_context cpu_context;
   long state;
   long counter; //how long is been running, on 0 switch task, based on counter, determines time to execution, bigger counter executes first
-  long priority; //initially set to counter, change to custom
+  long priority;
   long preempt_count; // !=0, critical function being executed
 };
 
