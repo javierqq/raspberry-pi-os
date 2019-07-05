@@ -10,6 +10,7 @@ int copy_process(unsigned long fn, unsigned long arg, long pri) {
   if (!p)
     return 1;
 
+  //if else conditions, based on assigned memory, determine priority
   if (p > (2^32 -1)*2/3) {
     pri = 3;
   } else if (p < (2^32 -1)*2/3 && p >= (2^32 -1)/3) {
@@ -17,7 +18,7 @@ int copy_process(unsigned long fn, unsigned long arg, long pri) {
   } else {
     pri = 1;
   }
-  
+
 
   p->priority = pri; //set priority here, highest priority serve first
   p->state = TASK_RUNNING;
