@@ -17,6 +17,7 @@ int copy_process(unsigned long fn, unsigned long arg, long pri) {
   } else {
     pri = 1;
   }
+  
 
   p->priority = pri; //set priority here, highest priority serve first
   p->state = TASK_RUNNING;
